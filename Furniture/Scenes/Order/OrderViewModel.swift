@@ -9,15 +9,21 @@
 import Foundation
 
 final class OrderViewModel {
-  var order = Order(products: [])
-  private var productService: ProductService = ProductServiceAdapter()
-  private lazy var products: [Product] = {
-    return self.productService.getProducts()
-  }()
+  struct Dependencies {
+    var orderService: OrderService = OrderServiceAdapter.shared
+  }
+  let dependecies: Dependencies
+  private var order: Order {
+    get {
+      return dependecies.orderService.getOrder()
+    }
+    set {
+      dependecies.orderService.saveOrder(order: newValue)
+    }
+  }
   
-  func addProduct() {
-    guard let newProduct = products.randomElement() else { return }
-    order.products.append(newProduct)
+  init(dependencies: Dependencies = .init()) {
+    self.dependecies = dependencies
   }
   
   func getNumberOfProducts() -> Int {
@@ -25,12 +31,12 @@ final class OrderViewModel {
   }
   
   func getProductViewModel(for indexPath: IndexPath) -> ProductViewModel {
-    let product = order.products[indexPath.row]
-    return ProductViewModel(name: product.name, price: product.formattedPrice, imageName: product.imageName)
+    let orderProduct = order.products[indexPath.row]
+    return ProductViewModel(name: orderProduct.product.name, price: orderProduct.formattedTotal, imageName: orderProduct.product.imageName)
   }
   
   func getProduct(for indexPath: IndexPath) -> Product {
-    return order.products[indexPath.row]
+    return order.products[indexPath.row].product
   }
   
   func getTotal() -> String {

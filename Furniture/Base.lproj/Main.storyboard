@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -42,6 +43,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="addBarButtonItem" destination="yHI-km-lj7" id="wRS-Ts-BmB"/>
                         <outlet property="orderTableView" destination="1WA-Rh-pfZ" id="TqB-0s-UwA"/>
                     </connections>
                 </viewController>
@@ -74,7 +76,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="295.5"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="cbn-49-mea">
-                                <rect key="frame" x="8" y="391.5" width="398" height="462.5"/>
+                                <rect key="frame" x="8" y="391.5" width="398" height="413.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -95,7 +97,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jlv-bk-6nZ"/>
                     </view>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" id="UlH-sD-Fwh"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="descriptionTextView" destination="cbn-49-mea" id="oym-5e-nPM"/>
                         <outlet property="productImageView" destination="CCR-JA-bao" id="1gi-TF-uTk"/>
@@ -103,7 +107,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YmK-Fg-VO8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2786.9565217391305" y="525"/>
+            <point key="canvasLocation" x="2725" y="525"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="VRQ-Sf-olz">
@@ -139,7 +143,78 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JQc-hn-xbW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1876.8115942028987" y="525"/>
+            <point key="canvasLocation" x="1728" y="525"/>
+        </scene>
+        <!--Add Product View Controller-->
+        <scene sceneID="cKO-o8-aYJ">
+            <objects>
+                <viewController id="WiX-n2-XrF" customClass="AddProductViewController" customModule="Furniture" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="d8Z-Lw-ipY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4zY-SQ-OPv">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ttu-KE-4tQ">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="EcP-he-1NT">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="d70-XJ-Mfv">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="7hY-V7-Hyn" firstAttribute="bottom" secondItem="4zY-SQ-OPv" secondAttribute="bottom" id="4Vs-FZ-4dV"/>
+                            <constraint firstItem="7hY-V7-Hyn" firstAttribute="trailing" secondItem="4zY-SQ-OPv" secondAttribute="trailing" id="9iw-HS-FP1"/>
+                            <constraint firstItem="4zY-SQ-OPv" firstAttribute="leading" secondItem="7hY-V7-Hyn" secondAttribute="leading" id="9mO-cP-h55"/>
+                            <constraint firstItem="4zY-SQ-OPv" firstAttribute="top" secondItem="7hY-V7-Hyn" secondAttribute="top" id="xve-eQ-Ca6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="7hY-V7-Hyn"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="rx7-eX-DpD">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="REL-jk-v2B">
+                            <connections>
+                                <action selector="cancellButtonTapped:" destination="WiX-n2-XrF" id="cY6-7i-Ia1"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="productCollectionView" destination="4zY-SQ-OPv" id="Ped-EP-TVP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XJs-Ne-g5B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2808.6956521739135" y="-147.32142857142856"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ek0-ct-9nq">
+            <objects>
+                <navigationController storyboardIdentifier="AddProductViewNavigation" automaticallyAdjustsScrollViewInsets="NO" id="cD8-gU-QLY" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Uks-Ts-Ef7">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="WiX-n2-XrF" kind="relationship" relationship="rootViewController" id="99N-Nr-VKQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bay-PY-oFJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1898.5507246376812" y="-147.32142857142856"/>
         </scene>
     </scenes>
 </document>

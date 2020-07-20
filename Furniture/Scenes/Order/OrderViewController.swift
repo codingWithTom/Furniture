@@ -11,20 +11,25 @@ import UIKit
 class OrderViewController: UIViewController {
   
   @IBOutlet private weak var orderTableView: UITableView!
+  @IBOutlet private weak var addBarButtonItem: UIBarButtonItem!
   private let viewModel = OrderViewModel()
   private let productTableViewCellIdentifier = "ProductCellIdentifier"
   private let productDetailVCIdentifier = "ProductDetailNavigation"
+  private let addProductVCIdentifier = "AddProductViewNavigation"
   
   override func viewDidLoad() {
     super.viewDidLoad()
     configureTableView()
-    updateTitle()
   }
   
   @IBAction func addProduct(_ sender: Any) {
-    viewModel.addProduct()
-    updateTitle()
-    orderTableView.reloadData()
+    guard
+      let controller = storyboard?.instantiateViewController(identifier: addProductVCIdentifier) as? UINavigationController,
+      let addProductController = controller.viewControllers.first as? AddProductViewController
+    else { return }
+    controller.presentationController?.delegate = self
+    addProductController.presentationDelegate = self
+    present(controller, animated: true, completion: nil)
   }
   
   @IBAction func toggleEdit(_ sender: Any) {
@@ -38,12 +43,17 @@ private extension OrderViewController {
     orderTableView.dataSource = self
     orderTableView.register(UINib(nibName: String(describing: ProductTableViewCell.self), bundle: nil),
                             forCellReuseIdentifier: productTableViewCellIdentifier)
-    orderTableView.reloadData()
+    refreshUI()
   }
   
   func updateTitle() {
     let total = viewModel.getTotal()
     title = total
+  }
+  
+  func refreshUI() {
+    updateTitle()
+    orderTableView.reloadData()
   }
 }
 
@@ -93,5 +103,17 @@ extension OrderViewController: UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
     viewModel.moveProduct(from: sourceIndexPath, to: destinationIndexPath)
+  }
+}
+
+extension OrderViewController: UIAdaptivePresentationControllerDelegate {
+  func presentationControllerDidDismiss(_ presentationController: UIPresentationController) {
+    refreshUI()
+  }
+}
+
+extension OrderViewController: AddProductPresentationUpdateDelegate {
+  func didDissmisView() {
+    refreshUI()
   }
 }
