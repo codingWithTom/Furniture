@@ -14,17 +14,20 @@ class OrderViewController: UIViewController {
   private let viewModel = OrderViewModel()
   private let productTableViewCellIdentifier = "ProductCellIdentifier"
   private let productDetailVCIdentifier = "ProductDetailNavigation"
+  private let addProductVCIdentifier = "AddProductNavigation"
   
   override func viewDidLoad() {
     super.viewDidLoad()
     configureTableView()
-    updateTitle()
   }
   
   @IBAction func addProduct(_ sender: Any) {
-    viewModel.addProduct()
-    updateTitle()
-    orderTableView.reloadData()
+    guard
+      let navController = storyboard?.instantiateViewController(withIdentifier: addProductVCIdentifier) as? UINavigationController,
+      let addProductController = navController.viewControllers.first as? AddProductViewController
+    else { return }
+    addProductController.presentationDelegate = self
+    present(navController, animated: true, completion: nil)
   }
   
   @IBAction func toggleEdit(_ sender: Any) {
@@ -33,12 +36,17 @@ class OrderViewController: UIViewController {
 }
 
 private extension OrderViewController {
+  func refreshUI() {
+    orderTableView.reloadData()
+    updateTitle()
+  }
+  
   func configureTableView() {
     orderTableView.delegate = self
     orderTableView.dataSource = self
     orderTableView.register(UINib(nibName: String(describing: ProductTableViewCell.self), bundle: nil),
                             forCellReuseIdentifier: productTableViewCellIdentifier)
-    orderTableView.reloadData()
+    refreshUI()
   }
   
   func updateTitle() {
@@ -93,5 +101,11 @@ extension OrderViewController: UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
     viewModel.moveProduct(from: sourceIndexPath, to: destinationIndexPath)
+  }
+}
+
+extension OrderViewController: AddProductViewControllerPresentationDelegate {
+  func didDismissView() {
+    refreshUI()
   }
 }

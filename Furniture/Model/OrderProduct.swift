@@ -1,17 +1,19 @@
 //
-//  Order.swift
+//  OrderProduct.swift
 //  Furniture
 //
-//  Created by Tomas Trujillo on 2020-07-09.
+//  Created by Tomas Trujillo on 2020-07-20.
 //  Copyright © 2020 CodingWithTom. All rights reserved.
 //
 
 import Foundation
 
-struct Order {
-  var products: [OrderProduct]
+struct OrderProduct {
+  var quantity: Int
+  let product: Product
+  
   var total: Double {
-    return products.reduce(0.0) { $0 + $1.total }
+    return product.price * Double(quantity)
   }
   var formattedTotal: String {
     let formatter = NumberFormatter()

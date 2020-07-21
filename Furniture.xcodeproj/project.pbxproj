@@ -22,6 +22,14 @@
 		4056203B24B7E4B600822328 /* OrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4056203A24B7E4B600822328 /* OrderViewModel.swift */; };
 		4056203E24B7E7DE00822328 /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4056203C24B7E7DE00822328 /* ProductTableViewCell.swift */; };
 		4056203F24B7E7DE00822328 /* ProductTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4056203D24B7E7DE00822328 /* ProductTableViewCell.xib */; };
+		40BBB42324C657C70048EAFD /* OrderProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BBB42224C657C70048EAFD /* OrderProduct.swift */; };
+		40BBB42524C6588C0048EAFD /* OrderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BBB42424C6588C0048EAFD /* OrderService.swift */; };
+		40BBB42B24C65CD40048EAFD /* AddProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BBB42A24C65CD40048EAFD /* AddProduct.swift */; };
+		40BBB42E24C663E70048EAFD /* AddProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BBB42D24C663E70048EAFD /* AddProductViewController.swift */; };
+		40BBB43024C664810048EAFD /* AddProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BBB42F24C664810048EAFD /* AddProductViewModel.swift */; };
+		40BBB43324C664EB0048EAFD /* ProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BBB43124C664EB0048EAFD /* ProductCollectionViewCell.swift */; };
+		40BBB43424C664EB0048EAFD /* ProductCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40BBB43224C664EB0048EAFD /* ProductCollectionViewCell.xib */; };
+		40BBB43624C670890048EAFD /* TapSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 40BBB43524C670880048EAFD /* TapSound.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +51,14 @@
 		4056203A24B7E4B600822328 /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
 		4056203C24B7E7DE00822328 /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
 		4056203D24B7E7DE00822328 /* ProductTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductTableViewCell.xib; sourceTree = "<group>"; };
+		40BBB42224C657C70048EAFD /* OrderProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderProduct.swift; sourceTree = "<group>"; };
+		40BBB42424C6588C0048EAFD /* OrderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderService.swift; sourceTree = "<group>"; };
+		40BBB42A24C65CD40048EAFD /* AddProduct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddProduct.swift; sourceTree = "<group>"; };
+		40BBB42D24C663E70048EAFD /* AddProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductViewController.swift; sourceTree = "<group>"; };
+		40BBB42F24C664810048EAFD /* AddProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductViewModel.swift; sourceTree = "<group>"; };
+		40BBB43124C664EB0048EAFD /* ProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewCell.swift; sourceTree = "<group>"; };
+		40BBB43224C664EB0048EAFD /* ProductCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductCollectionViewCell.xib; sourceTree = "<group>"; };
+		40BBB43524C670880048EAFD /* TapSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = TapSound.mp3; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,8 +109,10 @@
 			isa = PBXGroup;
 			children = (
 				404E19A524BD30300070EC4D /* Furniture.entitlements */,
+				40BBB43524C670880048EAFD /* TapSound.mp3 */,
 				4056203624B7E47800822328 /* Scenes */,
 				4056203324B7E3A800822328 /* Services */,
+				40BBB42924C65CC10048EAFD /* UseCase */,
 				4056202E24B7E2DE00822328 /* Model */,
 				4056201A24B7E2CA00822328 /* AppDelegate.swift */,
 				4056201C24B7E2CA00822328 /* SceneDelegate.swift */,
@@ -111,6 +129,7 @@
 			children = (
 				4056202F24B7E2E700822328 /* Product.swift */,
 				4056203124B7E33600822328 /* Order.swift */,
+				40BBB42224C657C70048EAFD /* OrderProduct.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -119,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				4056203424B7E3B500822328 /* ProductService.swift */,
+				40BBB42424C6588C0048EAFD /* OrderService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -126,6 +146,7 @@
 		4056203624B7E47800822328 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				40BBB42C24C663D70048EAFD /* AddProduct */,
 				404E19A224BD2F9C0070EC4D /* SpliteView */,
 				404E199D24BD29C00070EC4D /* ProductDetail */,
 				4056203724B7E48400822328 /* Order */,
@@ -142,6 +163,25 @@
 				4056203D24B7E7DE00822328 /* ProductTableViewCell.xib */,
 			);
 			path = Order;
+			sourceTree = "<group>";
+		};
+		40BBB42924C65CC10048EAFD /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				40BBB42A24C65CD40048EAFD /* AddProduct.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		40BBB42C24C663D70048EAFD /* AddProduct */ = {
+			isa = PBXGroup;
+			children = (
+				40BBB42D24C663E70048EAFD /* AddProductViewController.swift */,
+				40BBB42F24C664810048EAFD /* AddProductViewModel.swift */,
+				40BBB43124C664EB0048EAFD /* ProductCollectionViewCell.swift */,
+				40BBB43224C664EB0048EAFD /* ProductCollectionViewCell.xib */,
+			);
+			path = AddProduct;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,6 +244,8 @@
 			files = (
 				4056202724B7E2CC00822328 /* LaunchScreen.storyboard in Resources */,
 				4056203F24B7E7DE00822328 /* ProductTableViewCell.xib in Resources */,
+				40BBB43624C670890048EAFD /* TapSound.mp3 in Resources */,
+				40BBB43424C664EB0048EAFD /* ProductCollectionViewCell.xib in Resources */,
 				4056202424B7E2CC00822328 /* Assets.xcassets in Resources */,
 				4056202224B7E2CA00822328 /* Main.storyboard in Resources */,
 			);
@@ -218,14 +260,20 @@
 			files = (
 				4056203024B7E2E700822328 /* Product.swift in Sources */,
 				4056203E24B7E7DE00822328 /* ProductTableViewCell.swift in Sources */,
+				40BBB42E24C663E70048EAFD /* AddProductViewController.swift in Sources */,
 				404E19A424BD2FB20070EC4D /* SplitViewController.swift in Sources */,
+				40BBB42B24C65CD40048EAFD /* AddProduct.swift in Sources */,
 				4056203224B7E33600822328 /* Order.swift in Sources */,
 				4056201B24B7E2CA00822328 /* AppDelegate.swift in Sources */,
 				4056201D24B7E2CA00822328 /* SceneDelegate.swift in Sources */,
+				40BBB42324C657C70048EAFD /* OrderProduct.swift in Sources */,
 				4056203524B7E3B500822328 /* ProductService.swift in Sources */,
+				40BBB43024C664810048EAFD /* AddProductViewModel.swift in Sources */,
+				40BBB42524C6588C0048EAFD /* OrderService.swift in Sources */,
 				4056203B24B7E4B600822328 /* OrderViewModel.swift in Sources */,
 				404E19A124BD2A390070EC4D /* ProductDetailViewController.swift in Sources */,
 				4056203924B7E4AD00822328 /* OrderViewController.swift in Sources */,
+				40BBB43324C664EB0048EAFD /* ProductCollectionViewCell.swift in Sources */,
 				404E199F24BD29D10070EC4D /* ProductDetailViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
