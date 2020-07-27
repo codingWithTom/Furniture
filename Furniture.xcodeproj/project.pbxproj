@@ -30,6 +30,12 @@
 		40BBB43324C664EB0048EAFD /* ProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BBB43124C664EB0048EAFD /* ProductCollectionViewCell.swift */; };
 		40BBB43424C664EB0048EAFD /* ProductCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40BBB43224C664EB0048EAFD /* ProductCollectionViewCell.xib */; };
 		40BBB43624C670890048EAFD /* TapSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 40BBB43524C670880048EAFD /* TapSound.mp3 */; };
+		40BD94C824CF4E7900DEC9CA /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BD94C724CF4E7900DEC9CA /* Store.swift */; };
+		40BD94CA24CF4EAC00DEC9CA /* StoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BD94C924CF4EAC00DEC9CA /* StoreService.swift */; };
+		40BD94CD24CF501F00DEC9CA /* StoresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BD94CC24CF501F00DEC9CA /* StoresViewController.swift */; };
+		40BD94CF24CF57B800DEC9CA /* StoresViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BD94CE24CF57B800DEC9CA /* StoresViewModel.swift */; };
+		40BD94D124CF668C00DEC9CA /* ApplicationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BD94D024CF668C00DEC9CA /* ApplicationService.swift */; };
+		40BD94D424CF80C500DEC9CA /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BD94D324CF80C500DEC9CA /* TabBarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +65,12 @@
 		40BBB43124C664EB0048EAFD /* ProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewCell.swift; sourceTree = "<group>"; };
 		40BBB43224C664EB0048EAFD /* ProductCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductCollectionViewCell.xib; sourceTree = "<group>"; };
 		40BBB43524C670880048EAFD /* TapSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = TapSound.mp3; sourceTree = SOURCE_ROOT; };
+		40BD94C724CF4E7900DEC9CA /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		40BD94C924CF4EAC00DEC9CA /* StoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreService.swift; sourceTree = "<group>"; };
+		40BD94CC24CF501F00DEC9CA /* StoresViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoresViewController.swift; sourceTree = "<group>"; };
+		40BD94CE24CF57B800DEC9CA /* StoresViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoresViewModel.swift; sourceTree = "<group>"; };
+		40BD94D024CF668C00DEC9CA /* ApplicationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationService.swift; sourceTree = "<group>"; };
+		40BD94D324CF80C500DEC9CA /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,12 +93,12 @@
 			path = ProductDetail;
 			sourceTree = "<group>";
 		};
-		404E19A224BD2F9C0070EC4D /* SpliteView */ = {
+		404E19A224BD2F9C0070EC4D /* SplitView */ = {
 			isa = PBXGroup;
 			children = (
 				404E19A324BD2FB20070EC4D /* SplitViewController.swift */,
 			);
-			path = SpliteView;
+			path = SplitView;
 			sourceTree = "<group>";
 		};
 		4056200E24B7E2CA00822328 = {
@@ -130,6 +142,7 @@
 				4056202F24B7E2E700822328 /* Product.swift */,
 				4056203124B7E33600822328 /* Order.swift */,
 				40BBB42224C657C70048EAFD /* OrderProduct.swift */,
+				40BD94C724CF4E7900DEC9CA /* Store.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -139,6 +152,8 @@
 			children = (
 				4056203424B7E3B500822328 /* ProductService.swift */,
 				40BBB42424C6588C0048EAFD /* OrderService.swift */,
+				40BD94C924CF4EAC00DEC9CA /* StoreService.swift */,
+				40BD94D024CF668C00DEC9CA /* ApplicationService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -146,10 +161,12 @@
 		4056203624B7E47800822328 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				40BD94D224CF80AE00DEC9CA /* TabBar */,
+				40BD94CB24CF500B00DEC9CA /* Stores */,
 				40BBB42C24C663D70048EAFD /* AddProduct */,
-				404E19A224BD2F9C0070EC4D /* SpliteView */,
-				404E199D24BD29C00070EC4D /* ProductDetail */,
 				4056203724B7E48400822328 /* Order */,
+				404E199D24BD29C00070EC4D /* ProductDetail */,
+				404E19A224BD2F9C0070EC4D /* SplitView */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -182,6 +199,23 @@
 				40BBB43224C664EB0048EAFD /* ProductCollectionViewCell.xib */,
 			);
 			path = AddProduct;
+			sourceTree = "<group>";
+		};
+		40BD94CB24CF500B00DEC9CA /* Stores */ = {
+			isa = PBXGroup;
+			children = (
+				40BD94CC24CF501F00DEC9CA /* StoresViewController.swift */,
+				40BD94CE24CF57B800DEC9CA /* StoresViewModel.swift */,
+			);
+			path = Stores;
+			sourceTree = "<group>";
+		};
+		40BD94D224CF80AE00DEC9CA /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				40BD94D324CF80C500DEC9CA /* TabBarViewController.swift */,
+			);
+			path = TabBar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,8 +294,11 @@
 			files = (
 				4056203024B7E2E700822328 /* Product.swift in Sources */,
 				4056203E24B7E7DE00822328 /* ProductTableViewCell.swift in Sources */,
+				40BD94D124CF668C00DEC9CA /* ApplicationService.swift in Sources */,
 				40BBB42E24C663E70048EAFD /* AddProductViewController.swift in Sources */,
+				40BD94C824CF4E7900DEC9CA /* Store.swift in Sources */,
 				404E19A424BD2FB20070EC4D /* SplitViewController.swift in Sources */,
+				40BD94CF24CF57B800DEC9CA /* StoresViewModel.swift in Sources */,
 				40BBB42B24C65CD40048EAFD /* AddProduct.swift in Sources */,
 				4056203224B7E33600822328 /* Order.swift in Sources */,
 				4056201B24B7E2CA00822328 /* AppDelegate.swift in Sources */,
@@ -270,8 +307,11 @@
 				4056203524B7E3B500822328 /* ProductService.swift in Sources */,
 				40BBB43024C664810048EAFD /* AddProductViewModel.swift in Sources */,
 				40BBB42524C6588C0048EAFD /* OrderService.swift in Sources */,
+				40BD94D424CF80C500DEC9CA /* TabBarViewController.swift in Sources */,
+				40BD94CA24CF4EAC00DEC9CA /* StoreService.swift in Sources */,
 				4056203B24B7E4B600822328 /* OrderViewModel.swift in Sources */,
 				404E19A124BD2A390070EC4D /* ProductDetailViewController.swift in Sources */,
+				40BD94CD24CF501F00DEC9CA /* StoresViewController.swift in Sources */,
 				4056203924B7E4AD00822328 /* OrderViewController.swift in Sources */,
 				40BBB43324C664EB0048EAFD /* ProductCollectionViewCell.swift in Sources */,
 				404E199F24BD29D10070EC4D /* ProductDetailViewModel.swift in Sources */,
