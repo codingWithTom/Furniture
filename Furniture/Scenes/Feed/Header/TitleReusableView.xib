@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="U6b-Vx-4bR" customClass="TitleReusableView" customModule="Furniture" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RPi-3P-U64">
+                    <rect key="frame" x="8" y="8" width="304" height="34"/>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <constraints>
+                <constraint firstItem="RPi-3P-U64" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" constant="8" id="6DK-dQ-9Ju"/>
+                <constraint firstItem="VXr-Tz-HHm" firstAttribute="bottom" secondItem="RPi-3P-U64" secondAttribute="bottom" constant="8" id="eVG-wS-4eR"/>
+                <constraint firstAttribute="trailing" secondItem="RPi-3P-U64" secondAttribute="trailing" constant="8" id="jwd-I1-nsF"/>
+                <constraint firstItem="RPi-3P-U64" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" constant="8" id="x6B-nx-hIq"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
+            <connections>
+                <outlet property="titleLabel" destination="RPi-3P-U64" id="sda-g4-j6e"/>
+            </connections>
+            <point key="canvasLocation" x="139" y="153"/>
+        </collectionReusableView>
+    </objects>
+</document>

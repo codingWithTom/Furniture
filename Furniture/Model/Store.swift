@@ -14,4 +14,5 @@ struct Store {
   let name: String
   let address: String
   let isOpen: Bool
+  let imageName: String
 }
